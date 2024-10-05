@@ -1,3 +1,14 @@
+# Optimizing Database Connection Pools: Best Practices and Insights
+<!-- TOC -->
+* [Overview](#overview)
+* [Background](#background)
+* [What is the Pool Size? Why is it Important? How to Determine the Optimal Pool Size?](#what-is-the-pool-size-why-is-it-important-how-to-determine-the-optimal-pool-size)
+* [Best Practices for Managing Connections](#best-practices-for-managing-connections)
+  * [Taking a Connection from the Pool:](#taking-a-connection-from-the-pool)
+    * [Below Practices are Helpful if You Have Extensive PL/SQL Code to be Invoked:](#below-practices-are-helpful-if-you-have-extensive-plsql-code-to-be-invoked)
+  * [Returning Connection to the Pool:](#returning-connection-to-the-pool)
+* [Code](#code)
+<!-- TOC -->
 # Overview
 As application developers, we understand that database connection pools are crucial for managing database connections efficiently. Connection pools help in reusing existing connections, reducing the overhead of creating new connections for each request, and managing the number of connections to avoid exhausting system resources. However, it is important to ensure that connection pools are managed properly to avoid issues such as connection leaks, resource exhaustion, and performance degradation.
 # Background
@@ -17,3 +28,5 @@ The pool size refers to the maximum number of connections that can be created in
 - **Truncate Temporary Tables:** Truncating temporary tables ensures that any temporary data from the previous session is removed. This helps in freeing up space and ensures that the next user of the connection does not see any residual data.
 ## Returning Connection to the Pool:
 - **Commit Transactions:** Committing transactions ensures that any changes made during the session are saved to the database. This helps in maintaining data consistency and durability
+# Code
+Source code and sample scripts can be found at [GitHub](https://github.com/balajich/connection-pool.git)
