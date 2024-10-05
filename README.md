@@ -15,7 +15,7 @@ As application developers, we understand that database connection pools are cruc
 This blog post is based on our experience with a legacy codebase that has extensive PL/SQL code to be invoked and uses a dedicated database connection per user.
 # What is the Pool Size? Why is it Important? How to Determine the Optimal Pool Size?
 The pool size refers to the maximum number of connections that can be created in the connection pool.
--**Importance:** The pool size determines the number of connections that can be used concurrently by the application. If the pool size is too small, the application may experience connection timeouts or performance degradation due to insufficient connections. Conversely, if the pool size is too large, it may lead to resource exhaustion and contention for system resources.
+- **Importance:** The pool size determines the number of connections that can be used concurrently by the application. If the pool size is too small, the application may experience connection timeouts or performance degradation due to insufficient connections. Conversely, if the pool size is too large, it may lead to resource exhaustion and contention for system resources.
 - **Determining Optimal Pool Size:** The optimal pool size can be determined based on factors such as the number of concurrent users, the workload of the application, and the capacity of the database server.
 # Best Practices for Managing Connections
 ## Taking a Connection from the Pool:
